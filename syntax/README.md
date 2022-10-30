@@ -1,9 +1,9 @@
 
 ## Struct Best Practices
 
+## Basic
+Struct example represents a type with different fields.
 ```
-// Struct example represents a type with different fields.
-
 type example struct {
     fla bool
     counter int 16
@@ -11,12 +11,13 @@ type example struct {
 }
 ```
 
+Declare a variable of type example set to its zero value
 ```
-// Declare a variable of type example set to its zero value
 var e1 example
+```
+Declare a variable of type example and init using a 'struct literal'
 
-// Declare a variable of type example and init using a 'struct literal'
-
+```
 e2 := example {
     flag: true, 
     counter: 10,
@@ -29,16 +30,16 @@ e2 := example {
     pi: 3.141592,
 }
 ```
+## Literal 
+Not recommended to create empty literal construction syntax like this.
 
+Reason: it doesn't always giving zero. It's an empty literal construction, not a zero value
 ```
-// Not recommended to create empty literal construction syntax like this
-// Reason: it doesn't always giving zero. It's an empty literal construction, not a zero value
-
 e1 := example{}
 ```
 
+Also not recommended to do as below, cause you'll get trouble later on
 ```
-// Also not recommended cause you'll get trouble later on
 e.flag = true 
 ```
 Just do
@@ -49,8 +50,12 @@ e := example {
 }
 ```
 
+## Display the value
+Recommended, print key and value
 ```
-// Display the value
-fmt.Printf("%+v\n", e1) // recommended, print key and value
-fmt.Printf("%v\n", e1) // print just the value
+fmt.Printf("%+v\n", e1) 
+```
+As this is gonna print just the value
+```
+fmt.Printf("%v\n", e1) 
 ```

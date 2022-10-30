@@ -1,5 +1,5 @@
 
-## Struct Best Practices
+# Struct Best Practices
 
 ## Basic
 Struct example represents a type with different fields.
@@ -49,7 +49,9 @@ e := example {
     flag: variable,
 }
 ```
+
 If you don't need the struct in multiple places, can just do on the fly (lireral type, type that doesn't have name) to avoid type polution.
+
 ```
 // Anonymous type set to its zero value
 var e1 struct {

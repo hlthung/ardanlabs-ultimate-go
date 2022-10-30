@@ -49,6 +49,26 @@ e := example {
     flag: variable,
 }
 ```
+If you don't need the struct in multiple places, can just do on the fly (lireral type, type that doesn't have name) to avoid type polution.
+```
+// Anonymous type set to its zero value
+var e1 struct {
+    flag bool
+    counter int16
+    pi float32
+}
+
+// If you want literal type and something is not zero, then do
+e2 := struct {
+    flag bool
+    counter int16
+    pi float32
+}{
+    flag: true,
+    counter: 10,
+    pi: 3.141592,
+}
+```
 
 ## Display the value
 Recommended, print key and value

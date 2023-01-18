@@ -8,7 +8,7 @@
 
 - https://medium.com/@meeusdylan/when-to-use-pointers-in-go-44c15fe04eac
 
-## Black Identifier
+## Blank Identifier
 
 `updateUser` returns update stats and error. But we don't care about the update stats, so we can use `_` cause compiler will later complain the variable declared but not used.
 ```
